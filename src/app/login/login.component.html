@@ -1,25 +1,26 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-6 offset-3 text-center">
+        <div class="col-6 offset-3">
             <div class="card">
                 <div class="col-10 offset-1">
                     <div class="card-body">
-                        <h5 class="card-title">Bem vindo!</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">E vai toma no cu</h6>
-                        <div class="example-container">
-                            <mat-form-field class="col-12">
-                                <input matInput placeholder="Email">
-                            </mat-form-field>
-                        </div>
-                        <div class="example-container">
-                            <mat-form-field class="col-12">
-                                <input matInput placeholder="Senha">
-                            </mat-form-field>
-                        </div>
+                        <h5 class="card-title text-center">Bem vindo</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Estavamos esperando por você!</h6>
+                        <form>
+                            <div class="form-group col-12">
+                                <label for="inputEmail">E-MAIL</label>
+                                <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="inputSenha">SENHA</label>
+                                <input type="password" class="form-control" id="inputSenha"
+                                    aria-describedby="senhaHelp">
+                                <small id="senhaHelp" class="form-text text-muted">Esqueceu a senha?</small>
+                            </div>
+                        </form>
                         <button class="btn-login" color="primary" mat-raised-button>Login</button>
-                        <br>
-                        <br>
-                        <p>Precisando de uma conta? <b>FODA-SE</b></p>
+                        <br><br>
+                        <p>Precisando de uma conta?&nbsp;<b>Clique aqui&nbsp;</b><i class="far fa-smile"></i></p>
                     </div>
                 </div>
             </div>
