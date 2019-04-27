@@ -1,0 +1,19 @@
+.row {
+    margin-top: 25vh;
+}
+
+.btn-login {
+    text-align: center;
+    width: 90%;
+}
+
+.card {
+    height: 50vh;
+    min-height: 300px;
+}
+
+p {
+    font-size: 85%;
+    text-align: left;
+    margin-left: 18px;
+}
