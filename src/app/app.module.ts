@@ -1,26 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule } from '@angular/material';
 import { ToastrModule} from 'ngx-toastr';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.component';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material';
+
+const routes: Routes = [
+  { path: 'listarUsuarios', component: UsuariosListComponent},
+  { path: 'login', component: LoginComponent},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    UsuariosListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
     NgbModule,
     MatButtonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    FormsModule,
+    AppRoutingModule,
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true}
+    ),
+    MatTableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
