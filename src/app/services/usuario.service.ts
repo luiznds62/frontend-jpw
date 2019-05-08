@@ -27,17 +27,4 @@ export class UsuarioService {
   cadastrarUsuario(usuario: Usuario){
     return this.http.post(this.apiUrl + `/api/usuario`, usuario , {responseType: 'text'})
   }
-
-  handleError(error) {
-    let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
- }
 }

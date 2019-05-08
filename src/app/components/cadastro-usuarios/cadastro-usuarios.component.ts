@@ -21,15 +21,14 @@ export class CadastroUsuariosComponent implements OnInit {
   cadastrar(form: NgForm){
     var usuarioCadastro = new Usuario;
     usuarioCadastro = form.value;
-    console.log(usuarioCadastro);
     this.usuarioService.cadastrarUsuario(usuarioCadastro).subscribe((response: any) => {
       var resposta = JSON.parse(response);
       if(resposta.sucesso){
         this.toastr.success(resposta.mensagem,'Sucesso')
+        form.reset();
       }else{
         this.toastr.error(resposta.mensagem,'Erro')
       }
     });
   }
-
 }
