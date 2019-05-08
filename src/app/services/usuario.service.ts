@@ -24,6 +24,10 @@ export class UsuarioService {
     return this.http.get(this.apiUrl + `/api/usuario/login/${usuario}/${senha}` ,{responseType: 'text'})
   }
 
+  cadastrarUsuario(usuario: Usuario){
+    return this.http.post(this.apiUrl + `/api/usuario`, usuario , {responseType: 'text'})
+  }
+
   handleError(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

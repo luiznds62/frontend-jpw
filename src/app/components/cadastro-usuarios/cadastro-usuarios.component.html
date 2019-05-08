@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      
+      <div class="card">
+        <h5 class="card-title mt-3 text-center">Crie sua <b>Conta</b></h5>
+        <h6 class="card-subtitle mb-2 text-muted text-center">E comece logo a usar nossos serviços!</h6>
+        <div class="col-md-14">
+          <div class="card-body">
+            <form #cadastrarForm="ngForm" (ngSubmit)="cadastrar(cadastrarForm)">
+              <div class="form-group col-6">
+                <label for="inputEmail">EMAIL</label>
+                <input name="email" class="form-control" id="inputEmail" ngModel required>
+              </div>
+              <div class="form-group col-6">
+                <label for="inputUsuario">USUÁRIO</label>
+                <input name="usuario" class="form-control" id="inputUsuario" ngModel required>
+              </div>
+              <div class="form-group col-6">
+                <label for="inputSenha">SENHA</label>
+                <input type="password" name="senha" class="form-control" id="inputSenha" aria-describedby="senhaHelp"
+                  ngModel required>
+                <small id="senhaHelp" class="form-text text-muted">Use oito ou mais caracteres para uma boa senha</small>
+              </div>
+              <button type="submit" value="Cadastrar" class="btn-cadastrar" color="primary" mat-raised-button>Cadastrar</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-2 offset-md-7 col-sm-2 offset-sm-7 col-xs-1 offset-xs-7">
+          <img class="rightSideImg" src="https://image.flaticon.com/icons/svg/1006/1006106.svg" alt="">
+        </div>
+      </div>
+      <button color="primary" mat-button>
+        <a routerLink="/login" routerLinkActive="active">Voltar</a>
+      </button>
+    </div>
+  </div>

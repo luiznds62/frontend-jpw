@@ -12,17 +12,20 @@ import { LoginComponent } from './components/login/login.component';
 import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.component';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material';
+import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadastro-usuarios.component';
 
 const routes: Routes = [
   { path: 'listarUsuarios', component: UsuariosListComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'cadastrarUsuario', component: CadastroUsuariosComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UsuariosListComponent
+    UsuariosListComponent,
+    CadastroUsuariosComponent
   ],
   imports: [
     BrowserModule,

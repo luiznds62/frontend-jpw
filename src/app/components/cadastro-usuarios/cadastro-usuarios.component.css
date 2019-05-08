@@ -5,13 +5,13 @@
 }
 
 .row {
-    margin-top: 25vh;
+    margin-top: 20vh;
     background-color: #ECF0F1;
 }
 
-.btn-login {
+.btn-cadastrar {
     text-align: center;
-    width: 90%;
+    width: 45%;
     left: 15px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .card {
-    height: 50vh;
+    height: 75vh;
     min-height: 400px;
     background-color: #FDFEFE;
     box-shadow: #141414;
@@ -31,12 +31,14 @@
 
 .card-title{
     margin-top: 1%;
+    margin-left: 2%;
     color: #3f51b5;
-    font-size: 180%;
+    font-size: 150%;
 }
 
 .card-subtitle{
     font-size: 100%;
+    margin-left: 2%;
 }
 
 p {
@@ -63,4 +65,10 @@ a{
 
 a:hover{
     text-decoration: none;
+}
+
+.rightSideImg{
+    position: absolute;
+    bottom: 35vh;
+    height: 30vh;
 }

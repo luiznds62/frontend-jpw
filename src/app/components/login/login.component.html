@@ -2,26 +2,27 @@
     <div class="row">
         <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Bem vindo</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Estavamos esperando por você!</h6>
-                        <form (ngSubmit)="Logar(loginForm)" #loginForm="ngForm">
-                            <div class="form-group col-12">
-                                <label for="inputEmail">USUÁRIO</label>
-                                <input name="usuario" class="form-control" id="inputEmail" ngModel required>
-                            </div>
-                            <div class="form-group col-12">
-                                <label for="inputSenha">SENHA</label>
-                                <input type="password" name="senha" class="form-control" id="inputSenha"
-                                    aria-describedby="senhaHelp" ngModel required>
-                                <small id="senhaHelp" class="form-text text-muted">Esqueceu a senha?</small>
-                            </div>
-                            <button type="submit" value="Logar" class="btn-login" color="primary"
-                                mat-raised-button>Login</button>
-                        </form>
-                        <br>
-                        <p>Precisando de uma conta?&nbsp;<b>Clique aqui&nbsp;</b><i class="far fa-smile"></i></p>
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Bem vindo</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">Estavamos esperando por você!</h6>
+                    <form (ngSubmit)="Logar(loginForm)" #loginForm="ngForm">
+                        <div class="form-group col-12">
+                            <label for="inputEmail">USUÁRIO</label>
+                            <input name="usuario" class="form-control" id="inputEmail" ngModel required>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="inputSenha">SENHA</label>
+                            <input type="password" name="senha" class="form-control" id="inputSenha"
+                                aria-describedby="senhaHelp" ngModel required>
+                            <small id="senhaHelp" class="form-text text-muted">Esqueceu a senha?</small>
+                        </div>
+                        <button type="submit" value="Logar" class="btn-login" color="primary"
+                            mat-raised-button>Login</button>
+                    </form>
+                    <br>
+                    <p>Precisando de uma conta?&nbsp;<a routerLink="/cadastrarUsuario"
+                            routerLinkActive="active"><b>Clique aqui&nbsp;</b></a><i class="far fa-smile"></i></p>
+                </div>
             </div>
             <button color="primary" mat-button>
                 <a routerLink="/listarUsuarios" routerLinkActive="active">Listagem de usuários</a>

@@ -22,11 +22,12 @@ export class LoginComponent implements OnInit {
 
   Logar(form: NgForm) {
     this.usuarioService.login(form.value.usuario, form.value.senha).subscribe((response: any) => {
-      if(response === 'Login realizado com sucesso'){
-        this.toastr.success('Login realizado!','Sucesso')
+      var resposta = JSON.parse(response);
+      if(resposta.sucesso){
+        this.toastr.success(resposta.mensagem,'Sucesso')
         this.erroLogin = false
       }else{
-        this.toastr.error('Usuário ou senha inválidos','Erro')
+        this.toastr.error(resposta.mensagem,'Erro')
         this.erroLogin = true
       }
     });
