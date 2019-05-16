@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+// Material
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule } from '@angular/material';
+import { MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule} from '@angular/material/card';
+import { MatTableDataSource } from '@angular/material';
+
 import { ToastrModule} from 'ngx-toastr';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
@@ -11,7 +17,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.component';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
 import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadastro-usuarios.component';
 
 const routes: Routes = [
@@ -43,7 +48,9 @@ const routes: Routes = [
       routes,
       { enableTracing: true}
     ),
-    MatTableModule 
+    MatTableModule ,
+    MatGridListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
