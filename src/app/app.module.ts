@@ -3,7 +3,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // Material
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatToolbarModule, MatSidenavModule, MatCheckbox } from '@angular/material';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCardModule} from '@angular/material/card';
 import { MatTableDataSource } from '@angular/material';
@@ -11,13 +11,14 @@ import { MatTableDataSource } from '@angular/material';
 import { ToastrModule} from 'ngx-toastr';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.component';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadastro-usuarios.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: 'listarUsuarios', component: UsuariosListComponent},
@@ -30,9 +31,11 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     UsuariosListComponent,
-    CadastroUsuariosComponent
+    CadastroUsuariosComponent,
+    HomeComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
@@ -51,6 +54,8 @@ const routes: Routes = [
     MatTableModule ,
     MatGridListModule,
     MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

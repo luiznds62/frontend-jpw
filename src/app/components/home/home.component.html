@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button color="secondary" (click)="sidenav.toggle()"><i class="fas fa-bars"></i></button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+    Sidenav content
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

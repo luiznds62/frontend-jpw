@@ -1,6 +1,6 @@
 mat-card{
     width: 30%;
-    height: 50%;
+    height: 60%;
 }
 
 mat-card-subtitle{
@@ -22,11 +22,18 @@ mat-form-field{
     text-align: center;
 }
 
-.login-button{
-    width: 90%;
-}
-
 .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary{
+    width: 90%;
     color: white;
     background-color: #673ab7;
+}
+
+.link-conta{
+    color: #808284;
+    margin-left: 5%;
+    text-align: left;
+}
+
+.routerLink{
+    text-decoration: none;
 }

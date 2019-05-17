@@ -1,8 +1,9 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl, FormGroup } from '@angular/forms';
 import { Usuario } from 'src/app/model/usuario';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,15 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  usuarioForm = new FormGroup({
+    usuario: new FormControl(''),
+    senha: new FormControl(''),
+  });
 
   erroLogin: boolean = false
-  constructor(private usuarioService: UsuarioService, private toastr: ToastrService) {
+  constructor(private usuarioService: UsuarioService,
+              private toastr: ToastrService,
+              private route: Router) {
 
   }
 
@@ -20,12 +27,13 @@ export class LoginComponent implements OnInit {
     //this.usuarioService.listarUsuarios().subscribe(console.log);
   }
 
-  Logar(form: NgForm) {
-    this.usuarioService.login(form.value.usuario, form.value.senha).subscribe((response: any) => {
+  Logar() {
+    this.usuarioService.login(this.usuarioForm.value.usuario, this.usuarioForm.value.senha).subscribe((response: any) => {
       var resposta = JSON.parse(response);
       if(resposta.sucesso){
         this.toastr.success(resposta.mensagem,'Sucesso')
         this.erroLogin = false
+        this.route.navigateByUrl('/home');
       }else{
         this.toastr.error(resposta.mensagem,'Erro')
         this.erroLogin = true

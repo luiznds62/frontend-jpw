@@ -5,16 +5,19 @@
             <mat-card-subtitle>Faça já seu login</mat-card-subtitle>
             <mat-card-content>
                 <div class="login-container">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Usuário</mat-label>
-                        <input matInput placeholder="Usuário">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Senha</mat-label>
-                        <input matInput placeholder="Senha">
-                        <mat-hint>Esqueceu sua senha?</mat-hint>
-                    </mat-form-field>
-                    <button class="login-button" mat-button color="primary">Entrar</button>
+                    <form [formGroup]="usuarioForm" (ngSubmit)="Logar()">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Usuário</mat-label>
+                            <input matInput placeholder="Usuário" formControlName="usuario">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput placeholder="Senha" formControlName="senha">
+                            <mat-hint>Esqueceu sua senha?</mat-hint>
+                        </mat-form-field>
+                        <button type="submit" mat-button color="primary">Entrar</button>
+                    </form>
+                    <p class="link-conta">Precisando de uma conta?&nbsp;<a class="routerLink" routerLink="/cadastrarUsuario" routerLinkActive="active"><b>Clique aqui&nbsp;</b></a><i class="far fa-smile"></i></p>
                 </div>
             </mat-card-content>
         </mat-card>
