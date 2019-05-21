@@ -21,17 +21,17 @@ export class UsuariosListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usuarioService.listarUsuarios().subscribe((response: any) =>{
-      response.forEach(res => {
-        var user = new Usuario;
-        user._id =res._id;
-        user.usuario = res.usuario;
-        user.email = res.email;
-        user.senha = res.senha;
-        this.usuarios.push(user);
-      }); 
-    });
-    this.dataSource = new MatTableDataSource<Usuario>(this.usuarios);
+    // this.usuarioService.listarUsuarios().subscribe((response: any) =>{
+    //   response.forEach(res => {
+    //     var user = new Usuario;
+    //     user._id =res._id;
+    //     user.usuario = res.usuario;
+    //     user.email = res.email;
+    //     user.senha = res.senha;
+    //     this.usuarios.push(user);
+    //   }); 
+    // });
+    // this.dataSource = new MatTableDataSource<Usuario>(this.usuarios);
   }
 
 }

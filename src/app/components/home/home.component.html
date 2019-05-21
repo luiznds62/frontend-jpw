@@ -1,14 +1,29 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-button color="secondary" (click)="sidenav.toggle()"><i class="fas fa-bars"></i></button>
+    <button mat-button color="secondary" (click)="drawer.toggle()"><i class="fas fa-bars"></i></button>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container class="example-container" *ngIf="shouldRun">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
-    Sidenav content
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+    <mat-menu #usuarioMenu="matMenu" xPosition="after">
+      <button mat-menu-item>Cadastro</button>
+      <button mat-menu-item>Listagem</button>
+    </mat-menu>
+    <mat-menu #produtoMenu="matMenu" xPosition="after">
+      <button mat-menu-item>Cadastro</button>
+      <button mat-menu-item>Listagem</button>
+    </mat-menu>
+    <mat-menu #vendaMenu="matMenu" xPosition="after">
+      <button mat-menu-item>Realizar venda</button>
+      <button mat-menu-item>Listagem de vendas</button>
+    </mat-menu>
+    <mat-list class="opcoesMenu">
+      <mat-list-item [matMenuTriggerFor]="usuarioMenu"><button>Usuário</button></mat-list-item>
+      <mat-list-item [matMenuTriggerFor]="produtoMenu"><button>Produto</button></mat-list-item>
+      <mat-list-item [matMenuTriggerFor]="vendaMenu"><button>Venda</button></mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
