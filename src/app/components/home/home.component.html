@@ -10,36 +10,36 @@
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="usuarios">Usuário</button>
 
                 <mat-menu #usuarios="matMenu">
-                    <button mat-menu-item>
-                        <a class="routerLink" routerLink="cadastroUsuario" routerLinkActive="active">Cadastro de usuário</a>
-                    </button>
-                    <button mat-menu-item>
-                        <a class="routerLink" routerLink="alterarSenha" routerLinkActive="active">Alterar senha</a>
-                    </button>
+                    <a class="routerLink" routerLink="cadastroUsuario" routerLinkActive="active" mat-menu-item>
+                        Cadastro de usuário
+                    </a>
+                    <a class="routerLink" routerLink="alterarSenha" routerLinkActive="active" mat-menu-item>
+                        Alterar senha
+                    </a>
                 </mat-menu>
             </div>
             <div class="menu-item">
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="produtos">Produto</button>
 
                 <mat-menu #produtos="matMenu">
-                    <button mat-menu-item>
-                        <a class="routerLink" routerLink="cadastroProduto" routerLinkActive="active">Cadastro de produto</a>
-                    </button>
-                    <button mat-menu-item>
-                        <a class="routerLink" routerLink="listagemProduto" routerLinkActive="active">Listagem de produto</a>
-                    </button>
+                    <a class="routerLink" routerLink="cadastroProduto" routerLinkActive="active" mat-menu-item>
+                        Cadastro de produto
+                    </a>
+                    <a class="routerLink" routerLink="listagemProduto" routerLinkActive="active" mat-menu-item>
+                        Listagem de produto
+                    </a>
                 </mat-menu>
             </div>
             <div class="menu-item">
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="vendas">Venda</button>
 
                 <mat-menu #vendas="matMenu">
-                    <button mat-menu-item>
-                        <a class="routerLink" routerLink="cadastroVenda" routerLinkActive="active">Cadastro de venda</a>
-                    </button>
-                    <button mat-menu-item>
-                        <a class="routerLink" routerLink="listagemVenda" routerLinkActive="active">Listagem de venda</a>
-                    </button>
+                    <a class="routerLink" routerLink="cadastroVenda" routerLinkActive="active" mat-menu-item>
+                        Cadastro de venda
+                    </a>
+                    <a class="routerLink" routerLink="listagemVenda" routerLinkActive="active" mat-menu-item>
+                      Listagem de venda
+                    </a>
                 </mat-menu>
             </div>
         </div>

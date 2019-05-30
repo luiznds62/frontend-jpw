@@ -1,39 +1,41 @@
-mat-card{
+mat-card {
     width: 30%;
     height: 60%;
 }
 
-mat-card-subtitle{
+mat-card-subtitle {
     text-align: center;
     margin-bottom: 5%;
 }
 
-mat-card-title{
+mat-card-title {
     text-align: center;
     margin-bottom: 5%;
 }
 
-mat-form-field{
+mat-form-field {
     width: 90%;
     margin-bottom: 5%;
 }
 
-.login-container{
+.login-container {
     text-align: center;
 }
 
-.mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary{
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
     width: 90%;
     color: white;
     background-color: #673ab7;
 }
 
-.link-conta{
+.link-conta {
     color: #808284;
     margin-left: 5%;
     text-align: left;
 }
 
-.routerLink{
+.routerLink {
     text-decoration: none;
 }
