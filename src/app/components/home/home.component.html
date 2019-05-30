@@ -1,29 +1,50 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-button color="secondary" (click)="drawer.toggle()"><i class="fas fa-bars"></i></button>
-  </mat-toolbar-row>
+<mat-toolbar class="toolbar" color="primary">
+    <mat-toolbar-row>
+        <button mat-button color="secondary" (click)="drawer.toggle()"><i class="fas fa-bars"></i></button>
+    </mat-toolbar-row>
 </mat-toolbar>
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
-    <mat-menu #usuarioMenu="matMenu" xPosition="after">
-      <button mat-menu-item>Cadastro</button>
-      <button mat-menu-item>Listagem</button>
-    </mat-menu>
-    <mat-menu #produtoMenu="matMenu" xPosition="after">
-      <button mat-menu-item>Cadastro</button>
-      <button mat-menu-item>Listagem</button>
-    </mat-menu>
-    <mat-menu #vendaMenu="matMenu" xPosition="after">
-      <button mat-menu-item>Realizar venda</button>
-      <button mat-menu-item>Listagem de vendas</button>
-    </mat-menu>
-    <mat-list class="opcoesMenu">
-      <mat-list-item [matMenuTriggerFor]="usuarioMenu"><button>Usuário</button></mat-list-item>
-      <mat-list-item [matMenuTriggerFor]="produtoMenu"><button>Produto</button></mat-list-item>
-      <mat-list-item [matMenuTriggerFor]="vendaMenu"><button>Venda</button></mat-list-item>
-    </mat-list>
-  </mat-drawer>
-  <div class="example-sidenav-content">
-    <router-outlet></router-outlet>
-  </div>
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+        <div class="menu">
+            <div class="menu-item">
+                <button class="buttonMenu" mat-button [matMenuTriggerFor]="usuarios">Usuário</button>
+
+                <mat-menu #usuarios="matMenu">
+                    <button mat-menu-item>
+                        <a class="routerLink" routerLink="cadastroUsuario" routerLinkActive="active">Cadastro de usuário</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a class="routerLink" routerLink="alterarSenha" routerLinkActive="active">Alterar senha</a>
+                    </button>
+                </mat-menu>
+            </div>
+            <div class="menu-item">
+                <button class="buttonMenu" mat-button [matMenuTriggerFor]="produtos">Produto</button>
+
+                <mat-menu #produtos="matMenu">
+                    <button mat-menu-item>
+                        <a class="routerLink" routerLink="cadastroProduto" routerLinkActive="active">Cadastro de produto</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a class="routerLink" routerLink="listagemProduto" routerLinkActive="active">Listagem de produto</a>
+                    </button>
+                </mat-menu>
+            </div>
+            <div class="menu-item">
+                <button class="buttonMenu" mat-button [matMenuTriggerFor]="vendas">Venda</button>
+
+                <mat-menu #vendas="matMenu">
+                    <button mat-menu-item>
+                        <a class="routerLink" routerLink="cadastroVenda" routerLinkActive="active">Cadastro de venda</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a class="routerLink" routerLink="listagemVenda" routerLinkActive="active">Listagem de venda</a>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
 </mat-drawer-container>

@@ -19,6 +19,11 @@ import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.
 import { RouterModule, Routes, Router } from '@angular/router';
 import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadastro-usuarios.component';
 import { HomeComponent } from './components/home/home.component';
+import { AlterarSenhaUsuarioComponent } from './components/alterar-senha-usuario/alterar-senha-usuario.component';
+import { CadastroProdutosComponent } from './components/cadastro-produtos/cadastro-produtos.component';
+import { ListagemProdutosComponent } from './components/listagem-produtos/listagem-produtos.component';
+import { CadastroVendasComponent } from './components/cadastro-vendas/cadastro-vendas.component';
+import { ListagemVendasComponent } from './components/listagem-vendas/listagem-vendas.component';
 
 const routes: Routes = [
   { path: 'listarUsuarios', component: UsuariosListComponent},
@@ -32,7 +37,12 @@ const routes: Routes = [
     LoginComponent,
     UsuariosListComponent,
     CadastroUsuariosComponent,
-    HomeComponent
+    HomeComponent,
+    AlterarSenhaUsuarioComponent,
+    CadastroProdutosComponent,
+    ListagemProdutosComponent,
+    CadastroVendasComponent,
+    ListagemVendasComponent,
   ],
   imports: [
     ReactiveFormsModule,
