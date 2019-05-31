@@ -42,6 +42,6 @@ export class LoginComponent implements OnInit {
         this.toastr.error(resposta.mensagem,'Erro')
         this.erroLogin = true
       }
-    });
+    },err => this.toastr.error('Usuário não encontrado','Erro'));
   }
 }

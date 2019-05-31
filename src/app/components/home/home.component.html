@@ -7,18 +7,6 @@
     <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
         <div class="menu">
             <div class="menu-item">
-                <button class="buttonMenu" mat-button [matMenuTriggerFor]="usuarios">Usuário</button>
-
-                <mat-menu #usuarios="matMenu">
-                    <a class="routerLink" routerLink="cadastroUsuario" routerLinkActive="active" mat-menu-item>
-                        Cadastro de usuário
-                    </a>
-                    <a class="routerLink" routerLink="alterarSenha" routerLinkActive="active" mat-menu-item>
-                        Alterar senha
-                    </a>
-                </mat-menu>
-            </div>
-            <div class="menu-item">
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="produtos">Produto</button>
 
                 <mat-menu #produtos="matMenu">

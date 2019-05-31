@@ -4,11 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadastro-usuarios.component';
 import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.component';
-import { AlterarSenhaUsuarioComponent } from './components/alterar-senha-usuario/alterar-senha-usuario.component';
-import { CadastroProdutosComponent } from './components/cadastro-produtos/cadastro-produtos.component';
-import { ListagemProdutosComponent } from './components/listagem-produtos/listagem-produtos.component';
-import { CadastroVendasComponent } from './components/cadastro-vendas/cadastro-vendas.component';
-import { ListagemVendasComponent } from './components/listagem-vendas/listagem-vendas.component';
+import { ProdutoComponent } from './components/produto/produto.component';
+import { VendaComponent } from './components/venda/venda.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -19,13 +16,8 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: 'cadastroUsuario', component: CadastroUsuariosComponent},
-      { path: 'alterarSenha', component: AlterarSenhaUsuarioComponent},
-
-      { path: 'cadastroProduto', component: CadastroProdutosComponent},
-      { path: 'listagemProduto', component: ListagemProdutosComponent},
-
-      { path: 'cadastroVenda', component: CadastroVendasComponent},
-      { path: 'listagemVenda', component: ListagemVendasComponent},
+      { path: 'produto', component: ProdutoComponent},
+      { path: 'venda', component: VendaComponent},
     ]
   }
 ];

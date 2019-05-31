@@ -11,8 +11,11 @@ import { Usuario } from 'src/app/model/usuario';
 })
 export class CadastroUsuariosComponent implements OnInit {
 
+  erroRepeticaoSenha: boolean = false;
+
   usuarioCadastroForm = new FormGroup({
-    login: new FormControl(''),
+    usuario: new FormControl(''),
+    repeticaoSenha: new FormControl(''),
     senha: new FormControl(''),
     email: new FormControl(''),
   });
@@ -24,7 +27,26 @@ export class CadastroUsuariosComponent implements OnInit {
   ngOnInit() {
   }
 
-  Cadastrar(){
+  limpaErroRepeticao(){
+    this.erroRepeticaoSenha = false;
+  }
+
+  verificarRepeticao(){
+    if(this.usuarioCadastroForm.value.senha){
+      if(this.usuarioCadastroForm.value.repeticaoSenha){
+        if(this.usuarioCadastroForm.value.senha != this.usuarioCadastroForm.value.repeticaoSenha){
+          this.erroRepeticaoSenha = true;
+        }else{
+          this.erroRepeticaoSenha = false;
+        }
+      }
+    }
+    if(this.usuarioCadastroForm.value.repeticaoSenha == ""){
+      this.erroRepeticaoSenha = false;
+    }
+  }
+
+  cadastrar(){
     var usuarioCadastro = new Usuario;
     usuarioCadastro = this.usuarioCadastroForm.value;
     console.log(usuarioCadastro);
