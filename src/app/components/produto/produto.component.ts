@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ProdutoService } from 'src/app/services/produto.service';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Produto } from 'src/app/model/produto';
+import { CadastroProdutoComponent } from '../dialogs/cadastro-produto/cadastro-produto.component';
 
 @Component({
   selector: 'app-produto',
@@ -12,12 +13,18 @@ export class ProdutoComponent implements OnInit {
 
   produtos: Produto[]
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(private produtoService: ProdutoService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.produtoService.listarProdutos().subscribe((response: any) => {
       this.produtos = response.object;
       console.log(this.produtos);
+    });
+  }
+
+  modalCadastro(){
+    this.dialog.open(CadastroProdutoComponent, {
+      width: '500px',
     });
   }
 

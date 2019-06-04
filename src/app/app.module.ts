@@ -7,6 +7,10 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, Mat
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCardModule} from '@angular/material/card';
 import { MatTableDataSource } from '@angular/material';
+import { MatDialogModule} from '@angular/material/dialog';
+
+// Flex Layout
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ToastrModule} from 'ngx-toastr';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -21,6 +25,7 @@ import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadast
 import { HomeComponent } from './components/home/home.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { VendaComponent } from './components/venda/venda.component';
+import { CadastroProdutoComponent } from './components/dialogs/cadastro-produto/cadastro-produto.component';
 
 const routes: Routes = [
   { path: 'listarUsuarios', component: UsuariosListComponent},
@@ -37,6 +42,7 @@ const routes: Routes = [
     HomeComponent,
     ProdutoComponent,
     VendaComponent,
+    CadastroProdutoComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -64,6 +70,8 @@ const routes: Routes = [
     MatSelectModule,
     MatMenuModule,
     MatListModule,
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
