@@ -10,11 +10,8 @@
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="produtos">Produto</button>
 
                 <mat-menu #produtos="matMenu">
-                    <a class="routerLink" routerLink="cadastroProduto" routerLinkActive="active" mat-menu-item>
-                        Cadastro de produto
-                    </a>
-                    <a class="routerLink" routerLink="listagemProduto" routerLinkActive="active" mat-menu-item>
-                        Listagem de produto
+                    <a class="routerLink" routerLink="produto" routerLinkActive="active" mat-menu-item>
+                        Ver produtos
                     </a>
                 </mat-menu>
             </div>
@@ -22,11 +19,8 @@
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="vendas">Venda</button>
 
                 <mat-menu #vendas="matMenu">
-                    <a class="routerLink" routerLink="cadastroVenda" routerLinkActive="active" mat-menu-item>
-                        Cadastro de venda
-                    </a>
-                    <a class="routerLink" routerLink="listagemVenda" routerLinkActive="active" mat-menu-item>
-                      Listagem de venda
+                    <a class="routerLink" routerLink="venda" routerLinkActive="active" mat-menu-item>
+                        Ver vendas
                     </a>
                 </mat-menu>
             </div>

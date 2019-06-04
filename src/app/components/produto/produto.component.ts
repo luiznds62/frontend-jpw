@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { ProdutoService } from 'src/app/services/produto.service';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Produto } from 'src/app/model/produto';
 
 @Component({
   selector: 'app-produto',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoComponent implements OnInit {
 
-  constructor() { }
+  produtos: Produto[]
+
+  constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
+    this.produtoService.listarProdutos().subscribe((response: any) => {
+      this.produtos = response.object;
+      console.log(this.produtos);
+    });
   }
 
+  deleteProduto(id){
+    this.produtoService.deletarProduto(id).subscribe((response: any) => {
+      alert(response);
+    });;
+  }
+
+  displayedColumns: string[] = ['codigo', 'nome', 'descricao', 'marca', 'opcoes'];
 }
