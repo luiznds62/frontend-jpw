@@ -1,0 +1,40 @@
+<mat-grid-list cols="1" rowHeight="100vh" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-grid-tile fxLayout="row">
+        <mat-card fxFlex="35%" fxFlex.xs="100%" fxFlex.sm="55%">
+            <mat-card-title>
+                <mat-icon>supervised_user_circle</mat-icon>
+            </mat-card-title>
+            <mat-card-subtitle>Cadastrar usuário</mat-card-subtitle>
+            <mat-card-content>
+                <div class="cadastro-container">
+                    <form [formGroup]="usuarioCadastroForm" (ngSubmit)="cadastrar()">
+                        <mat-form-field>
+                            <input matInput placeholder="Login" formControlName="usuario">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput placeholder="Senha" formControlName="senha">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Repita a senha</mat-label>
+                            <input (focusout)="verificarRepeticao()" type="password" matInput
+                                placeholder="Repita a senha" formControlName="repeticaoSenha">
+                        </mat-form-field>
+                        <div class="alertaErroRepeticao" *ngIf="erroRepeticaoSenha">
+                            As senhas digitadas não coincidem!
+                        </div>
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+                        <button type="submit" mat-button color="primary">Registrar</button>
+                    </form>
+                    <div class="footer">
+                        <a class="routerLink" routerLink="/login" routerLinkActive="active" mat-button
+                            color="accent">Voltar</a>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

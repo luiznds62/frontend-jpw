@@ -1,0 +1,27 @@
+<mat-grid-list cols="1" rowHeight="100vh" >
+    <mat-grid-tile fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+        <mat-card>
+            <mat-card-title>
+                <mat-icon>supervised_user_circle</mat-icon>
+            </mat-card-title>
+            <mat-card-subtitle>Faça já seu login</mat-card-subtitle>
+            <mat-card-content>
+                <div class="login-container">
+                    <form [formGroup]="usuarioForm" (ngSubmit)="Logar()">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Usuário</mat-label>
+                            <input matInput placeholder="Usuário" formControlName="usuario">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput placeholder="Senha" formControlName="senha">
+                            <mat-hint>Esqueceu sua senha?</mat-hint>
+                        </mat-form-field>
+                        <button type="submit" mat-button color="primary">Entrar</button>
+                    </form>
+                    <p class="link-conta">Precisando de uma conta?&nbsp;<a class="routerLink" routerLink="/registrar" routerLinkActive="active"><b>Clique aqui&nbsp;</b></a><i class="far fa-smile"></i></p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
