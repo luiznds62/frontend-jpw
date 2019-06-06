@@ -6,7 +6,6 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatToolbarModule, MatSidenavModule, MatCheckbox, MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCardModule} from '@angular/material/card';
-import { MatTableDataSource } from '@angular/material';
 import { MatDialogModule} from '@angular/material/dialog';
 
 // Flex Layout
@@ -70,10 +69,13 @@ const routes: Routes = [
     MatSelectModule,
     MatMenuModule,
     MatListModule,
+    FlexLayoutModule,
     MatDialogModule,
-    FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CadastroProdutoComponent
+  ]
 })
 export class AppModule { }

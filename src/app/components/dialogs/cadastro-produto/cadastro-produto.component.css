@@ -1,0 +1,25 @@
+.cadastro-container {
+    text-align: center;
+}
+
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
+    width: 90%;
+    color: white;
+    background-color: #673ab7;
+}
+
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+    width: 90%;
+    color: white;
+    background-color: #ffd740;
+}
+
+.alertaErroRepeticao {
+    margin-left: 3.5vh;
+    text-align: left;
+    color: red;
+}

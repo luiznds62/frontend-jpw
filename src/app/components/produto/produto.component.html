@@ -3,7 +3,7 @@
         <div class="cabecalho">
             <h1>PRODUTOS</h1>
         </div>
-        <button mat-button color="accent" (onclick)="modalCadastro()"><i class="material-icons">add</i>Produto </button>
+        <button mat-button color="accent" (click)="abrirModalCadastro()"><i class="material-icons">add</i>Produto </button>
         <div class="listaProdutos">
             <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
                 <ng-container matColumnDef="codigo">

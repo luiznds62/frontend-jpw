@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -11,5 +12,4 @@ export class CadastroProdutoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
