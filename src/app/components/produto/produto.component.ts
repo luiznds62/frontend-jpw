@@ -24,7 +24,7 @@ export class ProdutoComponent implements OnInit {
 
   abrirModalCadastro(){
     this.dialog.open(CadastroProdutoComponent, {
-      height: '90%',
+      height: '100%',
       width: '50%'
     });
   }

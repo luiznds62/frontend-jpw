@@ -29,10 +29,6 @@ export class LoginComponent implements OnInit {
 
   Logar() {
     this.usuarioService.login(this.usuarioForm.value.usuario, this.usuarioForm.value.senha).subscribe((response: any) => {
-      if(response.status == 404){
-        this.toastr.error('Usuário não encontardo','Erro')
-        this.erroLogin = true
-      }
       var resposta = JSON.parse(response);
       if(resposta.sucesso){
         this.toastr.success(resposta.mensagem,'Sucesso')
