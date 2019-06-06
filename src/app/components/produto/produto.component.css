@@ -23,8 +23,23 @@ table {
     width: 100%;
 }
 
+.thItem {
+    padding-top: 2%;
+}
+
+.tdItem {
+    padding-top: 1%;
+}
+
 .material-icons {
     padding-right: 5px;
+}
+
+.mat-button,
+.mat-flat-button,
+.mat-icon-button,
+.mat-stroked-button {
+    min-width: 20px;
 }
 
 .mat-button.mat-accent,

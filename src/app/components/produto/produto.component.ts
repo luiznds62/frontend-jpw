@@ -3,6 +3,8 @@ import { ProdutoService } from 'src/app/services/produto.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Produto } from 'src/app/model/produto';
 import { CadastroProdutoComponent } from '../dialogs/cadastro-produto/cadastro-produto.component';
+import { AlterarProdutoComponent } from '../dialogs/alterar-produto/alterar-produto.component';
+import { DeletarProdutoComponent } from '../dialogs/deletar-produto/deletar-produto.component';
 
 @Component({
   selector: 'app-produto',
@@ -22,10 +24,38 @@ export class ProdutoComponent implements OnInit {
     });
   }
 
+  ngOnChange(){
+      // this will be called each time userInput changes
+      this.ngOnInit(); 
+  }
+
   abrirModalCadastro(){
-    this.dialog.open(CadastroProdutoComponent, {
+    const dialogRef = this.dialog.open(CadastroProdutoComponent, {
       height: '100%',
       width: '50%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
+
+  abrirModalAlteracao(){
+    const dialogRef = this.dialog.open(AlterarProdutoComponent, {
+      height: '100%',
+      width: '50%'
+    });
+  }
+
+  abrirModalDelete(_id){
+    const dialogRef = this.dialog.open(DeletarProdutoComponent, {
+      data: { _id: _id},
+      height: '14%',
+      width: '25%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
     });
   }
 

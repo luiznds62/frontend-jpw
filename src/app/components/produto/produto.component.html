@@ -5,33 +5,32 @@
         </div>
         <button mat-button color="accent" (click)="abrirModalCadastro()"><i class="material-icons">add</i>Produto </button>
         <div class="listaProdutos">
-            <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
+            <table mat-table [dataSource]="produtos" class="mat-elevation-z8" fxLayout="Column">
                 <ng-container matColumnDef="codigo">
-                    <th mat-header-cell *matHeaderCellDef> Código </th>
-                    <td mat-cell *matCellDef="let produtos"> {{produtos.id}} </td>
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Código </th>
+                    <td class="tdItem" mat-cell *matCellDef="let produtos" fxFlex="20%"> {{produtos.id}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="nome">
-                    <th mat-header-cell *matHeaderCellDef> Nome </th>
-                    <td mat-cell *matCellDef="let produtos"> {{produtos.nome}} </td>
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Nome </th>
+                    <td class="tdItem" mat-cell *matCellDef="let produtos" fxFlex="20%"> {{produtos.nome}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="descricao">
-                    <th mat-header-cell *matHeaderCellDef> Descricão </th>
-                    <td mat-cell *matCellDef="let produtos"> {{produtos.descricao}} </td>
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Descricão </th>
+                    <td class="tdItem" mat-cell *matCellDef="let produtos" fxFlex="20%"> {{produtos.descricao}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="marca">
-                    <th mat-header-cell *matHeaderCellDef> Marca </th>
-                    <td mat-cell *matCellDef="let produtos"> {{produtos.marca}} </td>
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Marca </th>
+                    <td class="tdItem" mat-cell *matCellDef="let produtos" fxFlex="20%"> {{produtos.marca}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="opcoes">
-                    <th mat-header-cell *matHeaderCellDef></th>
-                    <td mat-cell *matCellDef="let produtos">
-                        <i class="material-icons">border_color</i>
-                        <i class="material-icons">launch</i>
-                        <i class="material-icons">delete</i>
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"></th>
+                    <td class="tdItem" mat-cell *matCellDef="let produtos" fxFlex="20%">
+                        <a (click)="abrirModalAlteracao()" mat-button><i class="material-icons">border_color</i></a>
+                        <a (click)="abrirModalDelete(produtos._id)" mat-button><i class="material-icons">delete</i></a>
                     </td>
                 </ng-container>
 

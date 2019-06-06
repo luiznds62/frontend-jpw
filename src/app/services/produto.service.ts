@@ -28,7 +28,7 @@ export class ProdutoService {
     return this.http.post(this.apiUrl + `/api/produto`, produto , {responseType: 'text'})
   }
 
-  alterarProduto(produto: Produto, id){
+  alterarProduto(produto: Produto, id: string){
     return this.http.put(this.apiUrl + `/api/produto/` + id, produto , {responseType: 'text'})
   }
 
