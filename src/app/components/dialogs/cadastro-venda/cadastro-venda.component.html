@@ -1,0 +1,18 @@
+<div class="cadastro-container">
+  <h1>LANÇAMENTO DE VENDA</h1>
+  <form [formGroup]="vendaCadastroForm" (ngSubmit)="cadastrar()" fxLayout="column">
+    <mat-form-field appearance="outline">
+      <mat-label>Produto</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let produto of produtos" [(value)]="produto.nome">
+          {{produto.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Quantidade</mat-label>
+      <input matInput placeholder="Quantidade" formControlName="quantidade">
+    </mat-form-field>
+    <button type="submit" mat-button color="primary">Salvar</button>
+  </form>
+</div>

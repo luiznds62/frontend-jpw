@@ -3,6 +3,9 @@ import { Venda } from 'src/app/model/venda';
 import { VendaService } from 'src/app/services/venda.service';
 import { MatDialog } from '@angular/material';
 import { Produto } from 'src/app/model/produto';
+import { CadastroVendaComponent } from '../dialogs/cadastro-venda/cadastro-venda.component';
+import { DeletarVendaComponent } from '../dialogs/deletar-venda/deletar-venda.component';
+import { AlterarVendaComponent } from '../dialogs/alterar-venda/alterar-venda.component';
 
 
 @Component({
@@ -28,41 +31,41 @@ export class VendaComponent implements OnInit {
       this.ngOnInit(); 
   }
 
-  // abrirModalCadastro(){
-  //   const dialogRef = this.dialog.open(CadastroProdutoComponent, {
-  //     height: '100%',
-  //     width: '50%'
-  //   });
+  abrirModalCadastro(){
+    const dialogRef = this.dialog.open(CadastroVendaComponent, {
+      height: '63%',
+      width: '50%'
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.ngOnInit();
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
 
-  // abrirModalAlteracao(vendas: Venda){
-  //   console.log(vendas);
-  //   const dialogRef = this.dialog.open(AlterarProdutoComponent, {
-  //     data: { vendas: vendas},
-  //     height: '95%',
-  //     width: '50%'
-  //   });
+  abrirModalAlteracao(vendas: Venda){
+    console.log(vendas);
+    const dialogRef = this.dialog.open(AlterarVendaComponent, {
+      data: { vendas: vendas},
+      height: '95%',
+      width: '50%'
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.ngOnInit();
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
 
-  // abrirModalDelete(_id){
-  //   const dialogRef = this.dialog.open(DeletarProdutoComponent, {
-  //     data: { _id: _id},
-  //     height: '14%',
-  //     width: '25%'
-  //   });
+  abrirModalDelete(_id){
+    const dialogRef = this.dialog.open(DeletarVendaComponent, {
+      data: { _id: _id},
+      height: '14%',
+      width: '25%'
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.ngOnInit();
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
 
   displayedColumns: string[] = ['produto', 'quantidade', 'valorTotal', 'valorTotalDolar', 'opcoes'];
 

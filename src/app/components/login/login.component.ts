@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         this.toastr.success(resposta.mensagem,'Sucesso')
         this.erroLogin = false
         this.route.navigateByUrl('/home');
+        sessionStorage.setItem('userid',resposta.object[0]._id)
       }else{
         this.toastr.error(resposta.mensagem,'Erro')
         this.erroLogin = true

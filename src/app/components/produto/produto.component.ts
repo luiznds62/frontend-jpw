@@ -37,7 +37,7 @@ export class ProdutoComponent implements OnInit {
 
   abrirModalCadastro(){
     const dialogRef = this.dialog.open(CadastroProdutoComponent, {
-      height: '100%',
+      height: '50%',
       width: '50%'
     });
 
