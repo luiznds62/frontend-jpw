@@ -29,6 +29,12 @@ export class ProdutoComponent implements OnInit {
       this.ngOnInit(); 
   }
 
+  geraCsv(){
+    this.produtoService.csvProduto().subscribe((response: any) => {
+      
+    });
+  }
+
   abrirModalCadastro(){
     const dialogRef = this.dialog.open(CadastroProdutoComponent, {
       height: '100%',
@@ -40,10 +46,16 @@ export class ProdutoComponent implements OnInit {
     });
   }
 
-  abrirModalAlteracao(){
+  abrirModalAlteracao(produtos: Produto){
+    console.log(produtos);
     const dialogRef = this.dialog.open(AlterarProdutoComponent, {
-      height: '100%',
+      data: { produto: produtos},
+      height: '95%',
       width: '50%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
     });
   }
 

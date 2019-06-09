@@ -16,6 +16,10 @@ export class ProdutoService {
 
   }
 
+  csvProduto(){
+    return this.http.get(this.apiUrl + "/api/produto/relatorio/produto")
+  }
+
   listarProdutos(){
     return this.http.get(this.apiUrl + '/api/produto/')
   }

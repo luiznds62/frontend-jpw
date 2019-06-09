@@ -1,7 +1,7 @@
 mat-card {
     background-color: #ffffff;
     margin-top: 1vh;
-    width: 170vh;
+    width: 160vh;
     height: 120vh;
 }
 
@@ -21,6 +21,11 @@ mat-card-title {
 
 table {
     width: 100%;
+}
+
+.botaoCSV{
+    color: white!important;
+    background-color: #00bb1f!important;
 }
 
 .thItem {

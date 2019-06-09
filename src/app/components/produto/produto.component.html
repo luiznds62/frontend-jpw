@@ -3,7 +3,12 @@
         <div class="cabecalho">
             <h1>PRODUTOS</h1>
         </div>
-        <button mat-button color="accent" (click)="abrirModalCadastro()"><i class="material-icons">add</i>Produto </button>
+        <div fxLayout="row">
+            <button  fxFlex="20%" mat-button color="accent" (click)="abrirModalCadastro()"><i class="material-icons">add</i>Produto
+            </button>
+            <div fxFlex="2%"></div>
+            <a href="http://127.0.0.1:3000/api/produto/relatorio/produto" class="botaoCSV" fxFlex="20%" mat-button color="accent"><i class="material-icons">add</i>CSV </a>
+        </div>
         <div class="listaProdutos">
             <table mat-table [dataSource]="produtos" class="mat-elevation-z8" fxLayout="Column">
                 <ng-container matColumnDef="codigo">
@@ -29,7 +34,8 @@
                 <ng-container matColumnDef="opcoes">
                     <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"></th>
                     <td class="tdItem" mat-cell *matCellDef="let produtos" fxFlex="20%">
-                        <a (click)="abrirModalAlteracao()" mat-button><i class="material-icons">border_color</i></a>
+                        <a (click)="abrirModalAlteracao(produtos)" mat-button><i
+                                class="material-icons">border_color</i></a>
                         <a (click)="abrirModalDelete(produtos._id)" mat-button><i class="material-icons">delete</i></a>
                     </td>
                 </ng-container>

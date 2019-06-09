@@ -4,32 +4,32 @@
         <div fxLayout="row">
             <mat-form-field appearance="outline" class="nomeDescricao" fxFlex="47,5%">
                 <mat-label>Nome</mat-label>
-                <input matInput placeholder="Nome" formControlName="nome">
+                <input matInput placeholder="Nome" formControlName="nome" [(ngModel)]="data.produto.nome">
             </mat-form-field>
             <div fxFlex="5%">
 
             </div>
             <mat-form-field appearance="outline" class="nomeDescricao" fxFlex="47,5%">
                 <mat-label>Marca</mat-label>
-                <input matInput placeholder="Marca" formControlName="marca">
+                <input matInput placeholder="Marca" formControlName="marca" [(ngModel)]="data.produto.marca">
             </mat-form-field>
         </div>
         <div fxLayout="column">
             <mat-form-field appearance="outline">
                 <mat-label>Código</mat-label>
-                <input matInput placeholder="Código" formControlName="id">
+                <input matInput placeholder="Código" formControlName="id" [(ngModel)]="data.produto.id">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Descrição</mat-label>
-                <input matInput placeholder="Descrição" formControlName="descricao">
+                <input matInput placeholder="Descrição" formControlName="descricao" [(ngModel)]="data.produto.descricao">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Valor unitário</mat-label>
-                <input matInput placeholder="Valor unitário" formControlName="valorUnitario">
+                <input matInput placeholder="Valor unitário" formControlName="valorUnitario" [(ngModel)]="data.produto.valorUnitario">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Origem</mat-label>
-                <mat-select formControlName="origem">
+                <mat-select formControlName="origem" [(ngModel)]="data.produto.origem">
                     <mat-option>Nacional</mat-option>
                     <mat-option>Importado</mat-option>
                 </mat-select>

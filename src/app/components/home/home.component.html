@@ -7,6 +7,9 @@
     <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
         <div class="menu">
             <div class="menu-item">
+                <button class="routerLink" routerLink="dashboard" routerLinkActive="active" class="buttonMenu" mat-button>Dashboard</button>
+            </div>
+            <div class="menu-item">
                 <button class="buttonMenu" mat-button [matMenuTriggerFor]="produtos">Produto</button>
 
                 <mat-menu #produtos="matMenu">

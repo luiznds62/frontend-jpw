@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { ToastrService } from 'ngx-toastr';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { Produto } from 'src/app/model/produto';
 
 @Component({
   selector: 'app-alterar-produto',
@@ -19,15 +21,15 @@ export class AlterarProdutoComponent implements OnInit {
     origem: new FormControl('')
   });
 
-  constructor(private produtoService: ProdutoService, private toastr: ToastrService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,private produtoService: ProdutoService, private toastr: ToastrService) { }
 
   ngOnInit() {
+
   }
 
   alterar() {
     var produto = this.produtoCadastroForm.value;
-    var _id = "1";
-    this.produtoService.alterarProduto(produto,_id).subscribe((response: any) => {
+    this.produtoService.alterarProduto(produto,this.data.produto._id).subscribe((response: any) => {
       var resposta = JSON.parse(response);
       if (resposta.sucesso) {
         this.toastr.success(resposta.mensagem, 'Sucesso')

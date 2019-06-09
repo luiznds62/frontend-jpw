@@ -6,6 +6,7 @@ import { CadastroUsuariosComponent } from './components/cadastro-usuarios/cadast
 import { UsuariosListComponent } from './components/usuarios-list/usuarios-list.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { VendaComponent } from './components/venda/venda.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'cadastroUsuario', component: CadastroUsuariosComponent},
       { path: 'produto', component: ProdutoComponent},
       { path: 'venda', component: VendaComponent},
+      { path: 'dashboard', component: DashboardComponent},
     ]
   }
 ];

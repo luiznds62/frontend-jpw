@@ -27,6 +27,7 @@ import { VendaComponent } from './components/venda/venda.component';
 import { CadastroProdutoComponent } from './components/dialogs/cadastro-produto/cadastro-produto.component';
 import { AlterarProdutoComponent } from './components/dialogs/alterar-produto/alterar-produto.component';
 import { DeletarProdutoComponent } from './components/dialogs/deletar-produto/deletar-produto.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'listarUsuarios', component: UsuariosListComponent},
@@ -46,6 +47,7 @@ const routes: Routes = [
     CadastroProdutoComponent,
     AlterarProdutoComponent,
     DeletarProdutoComponent,
+    DashboardComponent,
   ],
   imports: [
     ReactiveFormsModule,

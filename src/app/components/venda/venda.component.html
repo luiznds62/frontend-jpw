@@ -1,3 +1,48 @@
-<p>
-  venda works!
-</p>
+<mat-card>
+    <mat-card-content>
+        <div class="cabecalho">
+            <h1>VENDAS</h1>
+        </div>
+        <div fxLayout="row">
+            <button  fxFlex="20%" mat-button color="accent" (click)="abrirModalCadastro()"><i class="material-icons">add</i>Venda
+            </button>
+            <div fxFlex="2%"></div>
+            <a href="http://127.0.0.1:3000/api/venda/relatorio/venda" class="botaoCSV" fxFlex="20%" mat-button color="accent"><i class="material-icons">add</i>CSV </a>
+        </div>
+        <div class="listaProdutos">
+            <table mat-table [dataSource]="vendas" class="mat-elevation-z8" fxLayout="Column">
+                <ng-container matColumnDef="produto">
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Produto </th>
+                    <td class="tdItem" mat-cell *matCellDef="let vendas" fxFlex="20%"> {{vendas.produto[0].nome}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="quantidade">
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Quantidade </th>
+                    <td class="tdItem" mat-cell *matCellDef="let vendas" fxFlex="20%"> {{vendas.quantidade}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="valorTotal">
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Valor total </th>
+                    <td class="tdItem" mat-cell *matCellDef="let vendas" fxFlex="20%"> {{vendas.valorTotal}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="valorTotalDolar">
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"> Valor total dolar </th>
+                    <td class="tdItem" mat-cell *matCellDef="let vendas" fxFlex="20%"> {{vendas.valorTotalDolar}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="opcoes">
+                    <th class="thItem" mat-header-cell *matHeaderCellDef fxFlex="20%"></th>
+                    <td class="tdItem" mat-cell *matCellDef="let vendas" fxFlex="20%">
+                        <a (click)="abrirModalAlteracao(vendas)" mat-button><i
+                                class="material-icons">border_color</i></a>
+                        <a (click)="abrirModalDelete(vendas._id)" mat-button><i class="material-icons">delete</i></a>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-card-content>
+</mat-card>
