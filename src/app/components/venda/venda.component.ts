@@ -6,6 +6,7 @@ import { Produto } from 'src/app/model/produto';
 import { CadastroVendaComponent } from '../dialogs/cadastro-venda/cadastro-venda.component';
 import { DeletarVendaComponent } from '../dialogs/deletar-venda/deletar-venda.component';
 import { AlterarVendaComponent } from '../dialogs/alterar-venda/alterar-venda.component';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 
 @Component({
@@ -17,21 +18,26 @@ export class VendaComponent implements OnInit {
 
   vendas: any
 
-  constructor(private vendaService: VendaService, public dialog: MatDialog) { }
+  constructor(private vendaService: VendaService, private produtoService: ProdutoService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.vendaService.listarVenda().subscribe((response: any) => {
       this.vendas = response.object;
+      for (var i in this.vendas) {
+        this.produtoService.listarPorId(this.vendas[i].produto).subscribe((response: any) => {
+          this.vendas[i].produto = response.object;
+        })
+      }
       console.log(this.vendas);
     });
   }
 
-  ngOnChange(){
-      // this will be called each time userInput changes
-      this.ngOnInit(); 
+  ngOnChange() {
+    // this will be called each time userInput changes
+    this.ngOnInit();
   }
 
-  abrirModalCadastro(){
+  abrirModalCadastro() {
     const dialogRef = this.dialog.open(CadastroVendaComponent, {
       height: '63%',
       width: '50%'
@@ -42,10 +48,10 @@ export class VendaComponent implements OnInit {
     });
   }
 
-  abrirModalAlteracao(vendas: Venda){
+  abrirModalAlteracao(vendas: Venda) {
     console.log(vendas);
     const dialogRef = this.dialog.open(AlterarVendaComponent, {
-      data: { vendas: vendas},
+      data: { vendas: vendas },
       height: '95%',
       width: '50%'
     });
@@ -55,9 +61,9 @@ export class VendaComponent implements OnInit {
     });
   }
 
-  abrirModalDelete(_id){
+  abrirModalDelete(_id) {
     const dialogRef = this.dialog.open(DeletarVendaComponent, {
-      data: { _id: _id},
+      data: { _id: _id },
       height: '14%',
       width: '25%'
     });

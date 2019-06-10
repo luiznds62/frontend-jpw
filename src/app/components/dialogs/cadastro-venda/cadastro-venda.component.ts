@@ -19,6 +19,7 @@ export class CadastroVendaComponent implements OnInit {
   });
 
   produtos: Produto[]
+  produtoSelecionado = "";
 
   constructor(private produtoService: ProdutoService, private vendaService: VendaService,private toastr: ToastrService) { }
 
@@ -28,17 +29,19 @@ export class CadastroVendaComponent implements OnInit {
     })
   }
 
-  cadastrar(produtoId) {
-    var usuarioId = localStorage.getItem('userid');
+  cadastrar() {
+    var usuarioId = sessionStorage.getItem('userid');
     var venda: Venda = {
       _id: '',
-      id: '',
-      produto: produtoId,
+      id: ( Math.random() * (9999 - 1) + 1).toString(),
+      produto: this.produtoSelecionado,
       usuarioCadastro: usuarioId,
       quantidade: this.vendaCadastroForm.value.quantidade,
       valorTotal: 0,
       valorTotalDolar: 0
     }
+
+    console.log(venda)
     this.vendaService.cadastrarVenda(venda).subscribe((response: any) => {
       this.toastr.success(response.mensagem);
     })
