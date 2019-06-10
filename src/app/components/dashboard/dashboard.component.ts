@@ -35,19 +35,10 @@ export class DashboardComponent implements OnInit {
           {
             type: "column",
             showInLegend: true,
+            yValueFormatString: "R$ #,###",
             legendMarkerColor: "grey",
             legendText: "Produto",
             dataPoints: dadosGrafico
-            // dataPoints: [      
-            //   { y: 300878, label: "Venezuela" },
-            //   { y: 266455,  label: "Saudi" },
-            //   { y: 169709,  label: "Canada" },
-            //   { y: 158400,  label: "Iran" },
-            //   { y: 142503,  label: "Iraq" },
-            //   { y: 101500, label: "Kuwait" },
-            //   { y: 97800,  label: "UAE" },
-            //   { y: 80000,  label: "Russia" }
-            // ]
           }
         ]
       });

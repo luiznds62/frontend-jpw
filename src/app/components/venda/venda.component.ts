@@ -24,6 +24,8 @@ export class VendaComponent implements OnInit {
     this.vendaService.listarVenda().subscribe((response: any) => {
       this.vendas = response.object;
       this.vendas.forEach(element => {
+        element.valorTotal = `R$ ${Math.round(element.valorTotal)}`
+        element.valorTotalDolar = `R$ ${Math.round(element.valorTotalDolar)}`
         this.produtoService.listarPorId(element.produto).subscribe((response: any) => {
           element.produto = response.object;
         })
