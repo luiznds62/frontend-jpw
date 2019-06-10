@@ -23,11 +23,11 @@ export class VendaComponent implements OnInit {
   ngOnInit() {
     this.vendaService.listarVenda().subscribe((response: any) => {
       this.vendas = response.object;
-      for (var i in this.vendas) {
-        this.produtoService.listarPorId(this.vendas[i].produto).subscribe((response: any) => {
-          this.vendas[i].produto = response.object;
+      this.vendas.forEach(element => {
+        this.produtoService.listarPorId(element.produto).subscribe((response: any) => {
+          element.produto = response.object;
         })
-      }
+      });
       console.log(this.vendas);
     });
   }
@@ -49,10 +49,9 @@ export class VendaComponent implements OnInit {
   }
 
   abrirModalAlteracao(vendas: Venda) {
-    console.log(vendas);
     const dialogRef = this.dialog.open(AlterarVendaComponent, {
       data: { vendas: vendas },
-      height: '95%',
+      height: '63%',
       width: '50%'
     });
 

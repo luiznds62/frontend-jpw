@@ -1,3 +1,18 @@
-<p>
-  alterar-venda works!
-</p>
+<div class="cadastro-container">
+    <h1>ALTERAÇÃO DE VENDA</h1>
+    <form [formGroup]="vendaCadastroForm" fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>Produto</mat-label>
+        <mat-select [(value)]="produtoSelecionado">
+          <mat-option *ngFor="let produto of produtos" [value]="produto._id">
+            {{produto.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Quantidade</mat-label>
+        <input matInput placeholder="Quantidade" formControlName="quantidade" [(ngModel)]="data.vendas.quantidade">
+      </mat-form-field>
+      <button type="submit" (click)="alterar()" mat-button color="primary">Salvar</button>
+    </form>
+  </div>
