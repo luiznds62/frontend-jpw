@@ -43,7 +43,7 @@ export class CadastroVendaComponent implements OnInit {
 
     console.log(venda)
     this.vendaService.cadastrarVenda(venda).subscribe((response: any) => {
-      this.toastr.success(response.mensagem);
+      this.toastr.success(response.mensagem,'Sucesso');
     })
   }
 }

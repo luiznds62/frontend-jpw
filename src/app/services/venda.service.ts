@@ -28,6 +28,10 @@ export class VendaService {
     return this.http.get(this.apiUrl + '/api/venda/' + id)
   }
 
+  consolideVendaProduto(idProduto){
+    return this.http.get(this.apiUrl + '/api/venda/consolide/' + idProduto)
+  }
+
   cadastrarVenda(venda: Venda) {
     return this.http.post(this.apiUrl + `/api/venda`, venda, { responseType: 'text' })
   }
