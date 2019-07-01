@@ -10,7 +10,7 @@ import { retry, catchError, tap } from 'rxjs/operators';
 export class UsuarioService {
 
   // API URL
-  private readonly apiUrl = 'http://127.0.0.1:3000'
+  private readonly apiUrl = 'http://backend-jpw.herokuapp.com'
 
   constructor(private http: HttpClient) { 
 
